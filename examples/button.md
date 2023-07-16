@@ -1,15 +1,10 @@
-<script setup>
-import JButton from '../src/components/button/Button.vue'
-import JButtonGroup from '../src/components/button/ButtonGroup.vue'
-import JRow from '../src/components/row/Row.vue'
-</script>
-
 # Button 按钮
 常用的操作按钮
 
 ## 基本用法
 
 基础的按钮用法
+<hr/>
 
 <j-row>
   <j-button>默认按钮</j-button>
@@ -44,10 +39,11 @@ import JRow from '../src/components/row/Row.vue'
   <j-button type="success" icon="j-icon-check" circle></j-button>
   <j-button type="info" icon="j-icon-message" circle></j-button>
   <j-button type="warning" icon="j-icon-star-off" circle></j-button>
-  <j-button type="danger" icon="j-icon-djete" circle></j-button>
+  <j-button type="danger" icon="j-icon-delete" circle></j-button>
 </j-row>
 
-**Button**
+<hr/>
+使用`type`、 `plain` 、`round` 和 `circle` 属性来定义 Button 的样式。
 
 ````vue
 <template>
@@ -91,6 +87,7 @@ import JRow from '../src/components/row/Row.vue'
 ## 禁用状态
 按钮不可用状态
 
+<hr/>
 <j-row>
   <j-button disabled>默认按钮</j-button>
   <j-button type="primary" disabled>主要按钮</j-button>
@@ -108,6 +105,10 @@ import JRow from '../src/components/row/Row.vue'
   <j-button type="warning" plain disabled>警告按钮</j-button>
   <j-button type="danger" plain disabled>危险按钮</j-button>
 </j-row>
+
+<hr/>
+
+你可以使用 `disabled` 属性来定义按钮是否可用，它接受一个 `Boolean` 值。
 
 ```vue
 <template>
@@ -135,6 +136,8 @@ import JRow from '../src/components/row/Row.vue'
 
 以按钮组的方式出现，常用于多项类似操作。
 
+<hr/>
+
 <j-button-group>
   <j-button type="primary" icon="j-icon-arrow-left">上一页</j-button>
   <j-button type="primary">下一页<i class="j-icon-arrow-right j-icon--right"></i></j-button>
@@ -142,8 +145,12 @@ import JRow from '../src/components/row/Row.vue'
 <j-button-group>
   <j-button type="primary" icon="j-icon-edit"></j-button>
   <j-button type="primary" icon="j-icon-share"></j-button>
-  <j-button type="primary" icon="j-icon-djete"></j-button>
+  <j-button type="primary" icon="j-icon-delete"></j-button>
 </j-button-group>
+
+<hr/>
+
+使用 `<el-button-group>` 标签来嵌套你的按钮。
 
 ```vue
 <template>
@@ -154,7 +161,7 @@ import JRow from '../src/components/row/Row.vue'
   <j-button-group>
     <j-button type="primary" icon="j-icon-edit"></j-button>
     <j-button type="primary" icon="j-icon-share"></j-button>
-    <j-button type="primary" icon="j-icon-djete"></j-button>
+    <j-button type="primary" icon="j-icon-delete"></j-button>
   </j-button-group>
 </template>
 ```

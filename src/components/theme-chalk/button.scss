@@ -1,0 +1,113 @@
+
+.j-button {
+  border: 1px solid #f2f2f2;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  &.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+    width: 45px;
+    height: 45px;
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  &.is-round {
+    border-radius: 10px;
+    padding: 10px 23px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &--primary {
+    background-color: #409eff;
+    color: #fff;
+    &.is-plain {
+      color: #409eff;
+      background: #ecf5ff;
+      border-color: #b3d8ff;
+    }
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+  &--success {
+    background-color: #67c23a;
+    color: #fff;
+    &.is-plain {
+      color: #67c23a;
+      background: #f0f9eb;
+      border-color: #c2e7b0;
+    }
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+  &--warning {
+    background-color: #e6a23c;
+    color: #fff;
+    &.is-plain {
+      color: #e6a23c;
+      background: #fdf6ec;
+      border-color: #f5dab1;
+    }
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+  &--danger {
+    background-color: #f56c6c;
+    color: #fff;
+    &.is-plain {
+      color: #f56c6c;
+      background: #fef0f0;
+      border-color: #fbc4c4;
+    }
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+  &--info {
+    background-color: #909399;
+    color: #fff;
+    &.is-plain {
+      color: #909399;
+      background: #f4f4f5;
+      border-color: #d3d4d6;
+    }
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+}
+
+.j-button-group {
+  display: inline;
+  margin: 5px;
+  & > .j-button {
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+  }
+}

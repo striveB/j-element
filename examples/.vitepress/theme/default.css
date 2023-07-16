@@ -1,0 +1,17 @@
+.j-row {
+  margin-bottom: 20px;
+}
+.j-row:last-child {
+  margin-bottom: 0;
+}
+.j-button + .j-button {
+  margin-left: 10px;
+}
+.j-button-group .j-button + .j-button {
+  /* margin: 0 !important; */
+  margin-left: -1px;
+}
+
+.j-button-group + .j-button-group {
+  margin-left: 10px;
+}
