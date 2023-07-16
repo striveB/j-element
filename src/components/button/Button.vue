@@ -35,7 +35,6 @@ const ClassNames = computed(() => {
   background-color: #fff;
   color: #333;
   cursor: pointer;
-  margin: 5px;
   font-size: 14px;
   &.is-circle {
     border-radius: 50%;

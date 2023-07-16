@@ -1,5 +1,6 @@
 <script setup>
 import JButton from '../src/components/button/Button.vue'
+import JButtonGroup from '../src/components/button/ButtonGroup.vue'
 import JRow from '../src/components/row/Row.vue'
 </script>
 
@@ -127,5 +128,33 @@ import JRow from '../src/components/row/Row.vue'
     <j-button type="warning" plain disabled>警告按钮</j-button>
     <j-button type="danger" plain disabled>危险按钮</j-button>
   </j-row>
+</template>
+```
+
+## 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+<j-button-group>
+  <j-button type="primary" icon="j-icon-arrow-left">上一页</j-button>
+  <j-button type="primary">下一页<i class="j-icon-arrow-right j-icon--right"></i></j-button>
+</j-button-group>
+<j-button-group>
+  <j-button type="primary" icon="j-icon-edit"></j-button>
+  <j-button type="primary" icon="j-icon-share"></j-button>
+  <j-button type="primary" icon="j-icon-djete"></j-button>
+</j-button-group>
+
+```vue
+<template>
+  <j-button-group>
+    <j-button type="primary" icon="j-icon-arrow-left">上一页</j-button>
+    <j-button type="primary">下一页<i class="j-icon-arrow-right j-icon--right"></i></j-button>
+  </j-button-group>
+  <j-button-group>
+    <j-button type="primary" icon="j-icon-edit"></j-button>
+    <j-button type="primary" icon="j-icon-share"></j-button>
+    <j-button type="primary" icon="j-icon-djete"></j-button>
+  </j-button-group>
 </template>
 ```
