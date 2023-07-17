@@ -6,6 +6,9 @@ export default defineConfig({
   outDir: '../docs',
   title: "J-Element",
   description: "J-Element 使用文档",
+  head: [ // 网站图标
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: 'logo.svg' }],
+  ],
   themeConfig: {
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
@@ -23,9 +26,9 @@ export default defineConfig({
           {
             text: "Basic",
             items: [
-              { text: "Icon 图标", link: "/api-examples" },
+              { text: "Icon 图标", link: "/icon" },
               { text: "Button 按钮", link: "/button" },
-              { text: "Link 文字链接", link: "/markdown-examples" },
+              { text: "Link 文字链接", link: "/link" },
             ],
           },
         ],
