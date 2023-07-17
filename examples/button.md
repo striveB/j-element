@@ -1,8 +1,6 @@
 # Button 按钮
 常用的操作按钮
-
 ## 基本用法
-
 基础的按钮用法
 <hr/>
 
@@ -46,6 +44,8 @@
 
 使用`type`、 `plain` 、`round` 和 `circle` 属性来定义 Button 的样式。
 
+::: details Show Code
+
 ````vue
 <template>
   <j-row>
@@ -85,6 +85,7 @@
   </j-row>
 </template>
 ````
+:::
 ## 禁用状态
 按钮不可用状态
 
@@ -107,9 +108,12 @@
   <j-button type="danger" plain disabled>危险按钮</j-button>
 </j-row>
 
+
 <hr/>
 
 你可以使用 `disabled` 属性来定义按钮是否可用，它接受一个 `Boolean` 值。
+
+::: details Show Code
 
 ```vue
 <template>
@@ -132,6 +136,7 @@
   </j-row>
 </template>
 ```
+:::
 
 ## 按钮组
 
@@ -153,6 +158,8 @@
 
 使用 `<el-button-group>` 标签来嵌套你的按钮。
 
+::: details Show Code
+
 ```vue
 <template>
   <j-button-group>
@@ -166,3 +173,5 @@
   </j-button-group>
 </template>
 ```
+
+:::
