@@ -2,6 +2,8 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/docs/",
+  outDir: '../docs',
   title: "J-Element",
   description: "J-Element 使用文档",
   themeConfig: {
