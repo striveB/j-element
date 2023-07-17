@@ -69,6 +69,15 @@ function say(e) {
       <j-button type="primary" icon="j-icon-delete"></j-button>
     </j-button-group>
   </j-row>
+  <j-row>
+    <j-button type="primary" icon="j-icon-edit"></j-button>
+    <j-button type="primary" icon="j-icon-share"></j-button>
+    <j-button type="primary" icon="j-icon-delete"></j-button>
+    <j-button type="primary" icon="j-icon-search">搜索</j-button>
+    <j-button type="primary"
+      >上传<i class="j-icon-upload j-icon--right"></i
+    ></j-button>
+  </j-row>
 </template>
 <style lang="scss">
 .j-row {

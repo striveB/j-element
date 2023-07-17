@@ -138,6 +138,33 @@
 ```
 :::
 
+## 图标按钮
+
+带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。
+
+<hr/>
+
+<j-button type="primary" icon="j-icon-edit"></j-button>
+<j-button type="primary" icon="j-icon-share"></j-button>
+<j-button type="primary" icon="j-icon-delete"></j-button>
+<j-button type="primary" icon="j-icon-search">搜索</j-button>
+<j-button type="primary">上传<i class="j-icon-upload j-icon--right"></i></j-button>
+
+<hr/>
+
+设置 `icon` 属性即可，icon 的列表可以参考 Element 的 icon 组件，也可以设置在文字右边的 icon ，只要使用 `i` 标签即可，可以使用自定义图标。
+
+::: details Show Code
+```vue
+<template>
+  <j-button type="primary" icon="j-icon-edit"></j-button>
+  <j-button type="primary" icon="j-icon-share"></j-button>
+  <j-button type="primary" icon="j-icon-delete"></j-button>
+  <j-button type="primary" icon="j-icon-search">搜索</j-button>
+  <j-button type="primary">上传<i class="j-icon-upload j-icon--right"></i></j-button>
+</template>
+```
+:::
 ## 按钮组
 
 以按钮组的方式出现，常用于多项类似操作。
@@ -156,10 +183,9 @@
 
 <hr/>
 
-使用 `<el-button-group>` 标签来嵌套你的按钮。
+使用 `<j-button-group>` 标签来嵌套你的按钮。
 
 ::: details Show Code
-
 ```vue
 <template>
   <j-button-group>
@@ -173,5 +199,4 @@
   </j-button-group>
 </template>
 ```
-
 :::

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineOptions, defineProps, computed } from "vue";
+import { defineOptions, defineProps, computed, useSlots } from "vue";
 let props = defineProps<{
   type?: string;
   icon?: string;
@@ -11,6 +11,8 @@ let props = defineProps<{
 defineOptions({
   name: "JButton",
 });
+const $slot = useSlots();
+
 const ClassNames = computed(() => {
   let names = [];
   props.type && names.push("j-button--" + props.type);
@@ -23,7 +25,12 @@ const ClassNames = computed(() => {
 </script>
 <template>
   <button class="j-button" :class="ClassNames">
-    <i v-if="props.icon" :class="[props.icon]"></i>
+    <template v-if="props.icon">
+      <i
+        :class="[props.icon]"
+        :style="$slot.default ? { marginRight: '3px' } : {}"
+      ></i>
+    </template>
     <slot></slot>
   </button>
 </template>
