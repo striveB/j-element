@@ -56,6 +56,19 @@ function say(e) {
     <j-button type="warning" plain disabled>警告按钮</j-button>
     <j-button type="danger" plain disabled>危险按钮</j-button>
   </j-row>
+  <j-row>
+    <j-button-group>
+      <j-button type="primary" icon="j-icon-arrow-left">上一页</j-button>
+      <j-button type="primary"
+        >下一页<i class="j-icon-arrow-right j-icon--right"></i
+      ></j-button>
+    </j-button-group>
+    <j-button-group>
+      <j-button type="primary" icon="j-icon-edit"></j-button>
+      <j-button type="primary" icon="j-icon-share"></j-button>
+      <j-button type="primary" icon="j-icon-delete"></j-button>
+    </j-button-group>
+  </j-row>
 </template>
 <style lang="scss">
 .j-row {
