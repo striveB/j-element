@@ -30,7 +30,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/striveB/j-ui" },
+      { icon: "github", link: "https://github.com/striveB/j-element" },
     ],
   },
 });
