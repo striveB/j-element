@@ -3,11 +3,6 @@ $block-sel: "-" !default;
 $elem-sel: "__" !default;
 $mod-sel: "--" !default;
 
-@mixin bfc{
-  height: 100%;
-  overflow: hidden;
-}
-
 // j-block
 @mixin b($block){
   $B:#{ $namespace + $block-sel + $block };
@@ -26,6 +21,7 @@ $mod-sel: "--" !default;
   } 
 }
 
+// .j-block--xxx
 @mixin m($m){
   $selector:&;
   @at-root{

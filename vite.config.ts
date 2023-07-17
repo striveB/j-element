@@ -25,7 +25,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/bem.scss";`
+        additionalData: `@import "./src/components/theme-chalk/mixins/index.scss";`
       }
     }
   },

@@ -1,97 +1,86 @@
-
-.j-button {
+@include b(button) {
   border: 1px solid #f2f2f2;
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: #fff;
-  color: #333;
+  background: $--button-default-background-color;
+  border: $--border-base;
+  border-color: $--button-default-border-color;
+  color: $--button-default-font-color;
   cursor: pointer;
   font-size: 14px;
   &.is-circle {
     border-radius: 50%;
     padding: 12px;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
   &.is-disabled {
     cursor: not-allowed;
     opacity: 0.6;
   }
   &.is-round {
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px 23px;
   }
-  &:hover {
-    opacity: 0.8;
-  }
-  &--primary {
-    background-color: #409eff;
-    color: #fff;
-    &.is-plain {
-      color: #409eff;
-      background: #ecf5ff;
-      border-color: #b3d8ff;
-    }
-    &.is-disabled {
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus {
+      color: $--button-disabled-font-color;
       cursor: not-allowed;
-      opacity: 0.6;
+      background-image: none;
+      background-color: $--button-disabled-background-color;
+      border-color: $--button-disabled-border-color;
     }
-  }
-  &--success {
-    background-color: #67c23a;
-    color: #fff;
+
+    &.el-button--text {
+      background-color: transparent;
+    }
+
     &.is-plain {
-      color: #67c23a;
-      background: #f0f9eb;
-      border-color: #c2e7b0;
-    }
-    &.is-disabled {
-      cursor: not-allowed;
-      opacity: 0.6;
+      &,
+      &:hover,
+      &:focus {
+        background-color: $--color-white;
+        border-color: $--button-disabled-border-color;
+        color: $--button-disabled-font-color;
+      }
     }
   }
-  &--warning {
-    background-color: #e6a23c;
-    color: #fff;
-    &.is-plain {
-      color: #e6a23c;
-      background: #fdf6ec;
-      border-color: #f5dab1;
-    }
-    &.is-disabled {
-      cursor: not-allowed;
-      opacity: 0.6;
-    }
+
+  &:hover{
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
   }
-  &--danger {
-    background-color: #f56c6c;
-    color: #fff;
-    &.is-plain {
-      color: #f56c6c;
-      background: #fef0f0;
-      border-color: #fbc4c4;
-    }
-    &.is-disabled {
-      cursor: not-allowed;
-      opacity: 0.6;
-    }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    outline: none;
   }
-  &--info {
-    background-color: #909399;
-    color: #fff;
-    &.is-plain {
-      color: #909399;
-      background: #f4f4f5;
-      border-color: #d3d4d6;
-    }
-    &.is-disabled {
-      cursor: not-allowed;
-      opacity: 0.6;
-    }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  @include m(primary){
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+  }
+  @include m(success){
+    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+  }
+  @include m(warning){
+    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+  }
+  @include m(danger){
+    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+  }
+  @include m(info){
+    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
   }
 }
 
-.j-button-group {
+@include b(button-group) {
   display: inline;
   margin: 5px;
   & > .j-button {
