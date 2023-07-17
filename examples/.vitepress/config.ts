@@ -13,7 +13,9 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "组件", link: "/button" },
     ],
-
+    search: { // vitepress 内置 search
+      provider: 'local'
+    },
     sidebar: [
       {
         text: "组件",
