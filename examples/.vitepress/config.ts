@@ -14,17 +14,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "组件", link: "/button" },
+      { text: "组件", link: "/quickstart" },
     ],
     search: { // vitepress 内置 search
       provider: 'local'
     },
     sidebar: [
       {
+        text: "开发指南",
+        items: [
+          { text: "快速上手", link: "/quickstart" },
+        ],
+      },
+      {
         text: "组件",
         items: [
           {
-            text: "Basic",
+            text: "基本",
             items: [
               { text: "Icon 图标", link: "/icon" },
               { text: "Button 按钮", link: "/button" },

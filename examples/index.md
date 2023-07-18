@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 开始使用
-      link: /button
+      link: /quickstart
     - theme: alt
       text: 在GitHub上查看
       link: https://github.com/striveB/j-element
