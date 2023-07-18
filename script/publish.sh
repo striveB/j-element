@@ -7,13 +7,13 @@ set -e
 version=`jq -r .version package.json`
 
 # 打包构建
-pnpm build
+npm run build
 
 # 发布到npm，pnpm(高性能的npm)
-pnpm publish
+# pnpm publish
 
 # 升级 j-element 依赖版本
-pnpm up j-element@$version
+npm up j-element@$version
 
 # 提交版本更新代码到github
 git add .
