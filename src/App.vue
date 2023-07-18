@@ -6,6 +6,12 @@ function say(e) {
 
 <template>
   <j-row>
+    <i class="j-icon-edit"></i>
+    <i class="j-icon-share"></i>
+    <i class="j-icon-delete"></i>
+    <j-button type="primary" icon="j-icon-search">搜索</j-button>
+  </j-row>
+  <j-row>
     <j-button>默认按钮</j-button>
     <j-button type="primary">主要按钮</j-button>
     <j-button type="success">成功按钮</j-button>
