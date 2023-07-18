@@ -1,5 +1,4 @@
 # 快速上手
-
 ## 安装
 
 **使用 pnpm**
@@ -29,11 +28,17 @@ $ npm i j-element
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueAmazingUI from 'j-element'
+// 引入组件库（必须）
+import JElementUI from 'j-element'
+// 引入样式（必须）
 import 'j-element/css'
 
 const app = createApp(App)
-app.use(VueAmazingUI)
+// 使用组件库
+app.use(JElementUI)
 
 app.mount('#app')
 ```
+::: tip 版本限制
+**`vue` 版本 >= `3.2.47`**
+:::
