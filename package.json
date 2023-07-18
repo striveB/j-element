@@ -31,7 +31,8 @@
     "docs:dev": "npm run build && vitepress dev examples",
     "docs:build": "vitepress build examples",
     "docs:preview": "vitepress preview examples",
-    "pub": "sh script/publish.sh"
+    "pub": "sh script/publish.sh",
+    "deploy:docs": "sh script/deploy.sh"
   },
   "dependencies": {
     "vue": "^3.2.47"
