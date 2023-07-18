@@ -8,5 +8,5 @@ npm run docs:build
 
 # 提交修改到github
 git add .
-git cm -m '部署文档'
+git commit -m '部署文档'
 git push
