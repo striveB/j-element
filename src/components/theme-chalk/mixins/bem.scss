@@ -2,6 +2,7 @@ $namespace: 'j' !default;
 $block-sel: "-" !default;
 $elem-sel: "__" !default;
 $mod-sel: "--" !default;
+$state-prefix: "is-" !default;
 
 // j-block
 @mixin b($block){
@@ -29,4 +30,13 @@ $mod-sel: "--" !default;
       @content;
     }
   } 
+}
+
+// .is-xxx
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
 }

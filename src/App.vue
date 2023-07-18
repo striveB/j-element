@@ -6,7 +6,7 @@ function say(e) {
 
 <template>
   <j-row>
-    <j-button @click="say">默认按钮</j-button>
+    <j-button>默认按钮</j-button>
     <j-button type="primary">主要按钮</j-button>
     <j-button type="success">成功按钮</j-button>
     <j-button type="info">信息按钮</j-button>
@@ -37,11 +37,11 @@ function say(e) {
     <j-button type="success" icon="j-icon-check" circle></j-button>
     <j-button type="info" icon="j-icon-message" circle></j-button>
     <j-button type="warning" icon="j-icon-star-off" circle></j-button>
-    <j-button type="danger" icon="j-icon-delete" circle></j-button>
+    <j-button type="danger" icon="j-icon-loading" circle></j-button>
   </j-row>
   <j-row>
     <j-button disabled>默认按钮</j-button>
-    <j-button type="primary" disabled>主要按钮</j-button>
+    <j-button type="primary" disabled @click="say">主要按钮</j-button>
     <j-button type="success" disabled>成功按钮</j-button>
     <j-button type="info" disabled>信息按钮</j-button>
     <j-button type="warning" disabled>警告按钮</j-button>
@@ -77,6 +77,27 @@ function say(e) {
     <j-button type="primary"
       >上传<i class="j-icon-upload j-icon--right"></i
     ></j-button>
+  </j-row>
+  <j-row>
+    <j-button type="primary" :loading="true" icon="j-icon-search"
+      >加载中</j-button
+    >
+  </j-row>
+  <j-row>
+    <j-button type="text">文字按钮</j-button>
+    <j-button type="text" disabled>文字按钮</j-button>
+  </j-row>
+  <j-row>
+    <j-button>默认按钮</j-button>
+    <j-button size="medium">中等按钮</j-button>
+    <j-button size="small">小型按钮</j-button>
+    <j-button size="mini">超小按钮</j-button>
+  </j-row>
+  <j-row>
+    <j-button round>默认按钮</j-button>
+    <j-button size="medium" round>中等按钮</j-button>
+    <j-button size="small" round>小型按钮</j-button>
+    <j-button size="mini" round>超小按钮</j-button>
   </j-row>
 </template>
 <style lang="scss">

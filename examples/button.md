@@ -138,6 +138,26 @@
 ```
 :::
 
+## 文字按钮
+
+没有边框和背景色的按钮
+
+<j-button type="text">文字按钮</j-button>
+<j-button type="text" disabled>文字按钮</j-button>
+
+<hr/>
+
+::: details Show Code
+
+```vue
+<template>
+  <j-button type="text">文字按钮</j-button>
+  <j-button type="text" disabled>文字按钮</j-button>
+</template>
+```
+
+:::
+
 ## 图标按钮
 
 带图标的按钮可增强辨识度（有文字）或节省空间（无文字）。
@@ -201,7 +221,67 @@
 ```
 :::
 
-## Attributes
+## 加载中
+
+点击按钮后进行数据加载操作，在按钮上显示加载状态。
+
+<hr/>
+
+<j-button type="primary" :loading="true">加载中</j-button>
+
+<hr/>
+
+要设置为loading 状态，只要设置 `loading` 属性为 `true` 即可。
+
+::: details Show Code
+```vue
+<template>
+  <el-button type="primary" :loading="true">加载中</el-button>
+</template>
+```
+:::
+
+## 不同尺寸
+
+Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的尺寸
+
+<hr/>
+
+<j-row>
+  <j-button>默认按钮</j-button>
+  <j-button size="medium">中等按钮</j-button>
+  <j-button size="small">小型按钮</j-button>
+  <j-button size="mini">超小按钮</j-button>
+</j-row>
+<j-row>
+  <j-button round>默认按钮</j-button>
+  <j-button size="medium" round>中等按钮</j-button>
+  <j-button size="small" round>小型按钮</j-button>
+  <j-button size="mini" round>超小按钮</j-button>
+</j-row>
+
+<hr/>
+
+:::details Show Code
+```vue
+<template>
+  <j-row>
+    <j-button>默认按钮</j-button>
+    <j-button size="medium">中等按钮</j-button>
+    <j-button size="small">小型按钮</j-button>
+    <j-button size="mini">超小按钮</j-button>
+  </j-row>
+  <j-row>
+    <j-button round>默认按钮</j-button>
+    <j-button size="medium" round>中等按钮</j-button>
+    <j-button size="small" round>小型按钮</j-button>
+    <j-button size="mini" round>超小按钮</j-button>
+  </j-row>
+</template>
+```
+::: 
+
+## 属性
 
 | 参数        | 说明           | 类型    | 可选值                                             | 默认值 |
 | ----------- | :------------- | ------- | -------------------------------------------------- | ------ |

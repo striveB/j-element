@@ -1,27 +1,26 @@
 @include b(button) {
   border: 1px solid #f2f2f2;
-  padding: 10px 20px;
-  border-radius: 4px;
   background: $--button-default-background-color;
   border: $--border-base;
   border-color: $--button-default-border-color;
   color: $--button-default-font-color;
   cursor: pointer;
-  font-size: 14px;
-  &.is-circle {
+
+  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+
+  @include when(circle){
     border-radius: 50%;
     padding: 12px;
     width: 41px;
     height: 41px;
   }
-  &.is-round {
+  @include when(round) {
     border-radius: 20px;
     padding: 10px 23px;
   }
-  &.is-disabled {
+  @include when(disabled){
     &,
-    &:hover,
-    &:focus {
+    &:hover{
       color: $--button-disabled-font-color;
       cursor: not-allowed;
       background-image: none;
@@ -32,8 +31,7 @@
     &.el-button--text {
       background-color: transparent;
     }
-
-    &.is-plain {
+    @include when(plain){
       &,
       &:hover,
       &:focus {
@@ -59,6 +57,13 @@
   &::-moz-focus-inner {
     border: 0;
   }
+
+  & [class*="j-icon-"] {
+    & + span {
+      margin-left: 5px;
+    }
+  }
+
   @include m(primary){
     @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
   }
@@ -73,6 +78,39 @@
   }
   @include m(info){
     @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+  }
+  @include m(text){
+    border-color: transparent;
+    color: $--color-primary;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover{
+      color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover {
+      border-color: transparent;
+    }
+  }
+
+  @include m(medium){
+    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+  }
+  @include m(small){
+    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
+  }
+  @include m(mini){
+    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
   }
 }
 
