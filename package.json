@@ -1,15 +1,36 @@
 {
   "name": "j-element",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/j-element.js",
+  "exports": {
+    "./dist/style.css": "./dist/style.css",
+    "./css": "./dist/style.css",
+    ".": {
+      "import": "./dist/j-element.js"
+    }
+  },
+  "keywords": [
+    "Vue3",
+    "TS",
+    "Vite",
+    "element",
+    "UI",
+    "Components",
+    "jun233s"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "docs:dev": "npm run build && vitepress dev examples",
     "docs:build": "vitepress build examples",
-    "docs:preview": "vitepress preview examples"
+    "docs:preview": "vitepress preview examples",
+    "pub": "sh script/publish.sh"
   },
   "dependencies": {
     "vue": "^3.2.47"
@@ -21,5 +42,12 @@
     "vite": "^4.3.2",
     "vitepress": "^1.0.0-beta.5",
     "vue-tsc": "^1.4.2"
-  }
+  },
+  "author": "jun233s",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/striveB/j-element/issues"
+  },
+  "homepage": "https://github.com/striveB/j-element#readme",
+  "description": "This template should help get you started developing with Vue Amazing UI in Vue 3."
 }

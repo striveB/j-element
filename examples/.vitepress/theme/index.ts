@@ -3,7 +3,7 @@ import { h } from 'vue'
 import Theme from 'vitepress/theme'
 import './style.css'
 import './default.css'
-import JUi from '../../../dist/j-ui.js'
+import JUi from '../../../dist/j-element.js'
 import '../../../dist/style.css'
 
 
