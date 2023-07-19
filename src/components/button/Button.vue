@@ -6,6 +6,7 @@ import {
   computed,
   useSlots,
 } from "vue";
+import { useClassTypeName } from "@/hooks/useClassTypeName";
 
 defineOptions({
   name: "JButton",
@@ -22,6 +23,7 @@ let props = defineProps<{
   size?: "large" | "small" | "mini";
   nativeType?: "button" | "submit" | "reset";
 }>();
+const baseClassName = useClassTypeName("j-button", props);
 
 const $slot = useSlots();
 
@@ -36,19 +38,17 @@ function handleClick(evt: MouseEvent) {
 // 根据传入的属性，动态生成class
 const ClassNames = computed(() => {
   let names = [];
-  props.type && names.push("j-button--" + props.type);
   props.round && names.push("is-round");
   props.circle && names.push("is-circle");
   (props.disabled || props.loading) && names.push("is-disabled");
   props.loading && names.push("is-loading");
   props.plain && names.push("is-plain");
   props.size && names.push("j-button--" + props.size);
-  return names;
+  return [baseClassName.value, ...names];
 });
 </script>
 <template>
   <button
-    class="j-button"
     :class="ClassNames"
     :type="props.nativeType || 'button'"
     @click="handleClick"

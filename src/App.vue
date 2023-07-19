@@ -1,6 +1,10 @@
 <script setup lang="ts">
-function say(e) {
-  console.log("hello", e);
+import Message from "./components/message/methods";
+function say() {
+  Message({
+    type: "success",
+    message: "恭喜你，这是一条成功消息",
+  });
 }
 </script>
 
@@ -9,7 +13,7 @@ function say(e) {
     <i class="j-icon-edit"></i>
     <i class="j-icon-share"></i>
     <i class="j-icon-delete"></i>
-    <j-button type="primary" icon="j-icon-search">搜索</j-button>
+    <j-button type="primary" icon="j-icon-search" @click="say">搜索</j-button>
   </j-row>
   <j-row>
     <j-button>默认按钮</j-button>
@@ -47,7 +51,7 @@ function say(e) {
   </j-row>
   <j-row>
     <j-button disabled>默认按钮</j-button>
-    <j-button type="primary" disabled @click="say">主要按钮</j-button>
+    <j-button type="primary" disabled>主要按钮</j-button>
     <j-button type="success" disabled>成功按钮</j-button>
     <j-button type="info" disabled>信息按钮</j-button>
     <j-button type="warning" disabled>警告按钮</j-button>

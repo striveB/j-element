@@ -1,6 +1,7 @@
 import Button from './components/button/Button.vue';
 import ButtonGroup from './components/button/ButtonGroup.vue';
 import Row from './components/row/Row.vue';
+import Message from './components/message/methods';
 import "./components/theme-chalk/index.scss"
 // @ts-ignore
 import type { App } from '@vue/runtime-core'
@@ -11,5 +12,6 @@ const install = (app: App) => {
   })
 }
 export default {
-  install
+  install,
+  JMessage: Message
 }
