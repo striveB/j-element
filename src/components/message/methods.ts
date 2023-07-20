@@ -23,7 +23,7 @@ type Instance = {
 let instances : Instance[] = [];
 let seed = 1;
 let top = 20;
-let step = 60
+let step = 70
 
 const createMessage = (props: MessageParams): Instance =>{
   const container: HTMLDivElement = document.createElement('div')
@@ -32,7 +32,6 @@ const createMessage = (props: MessageParams): Instance =>{
     ...props,
     id,
     top: 20,
-    close: close,
     onDestroy: ()=>{
       close(id)
     }

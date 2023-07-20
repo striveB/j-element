@@ -37,6 +37,12 @@ export default defineConfig({
               { text: "Link 文字链接", link: "/link" },
             ],
           },
+          {
+            text: "通知",
+            items: [
+              { text: "Message 消息提示", link: "/message" },
+            ],
+          },
         ],
       },
     ],
