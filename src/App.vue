@@ -1,19 +1,43 @@
 <script setup lang="ts">
 import Message from "./components/message/methods";
-function say() {
+function success() {
   Message({
     type: "success",
     message: "恭喜你，这是一条成功消息",
+  });
+}
+function warning() {
+  Message({
+    type: "warning",
+    message: "警告哦，这是一条警告消息",
+  });
+}
+function info() {
+  Message({
+    type: "info",
+    message: "这是一条消息提示",
+  });
+}
+function error() {
+  Message({
+    type: "error",
+    message: "错了哦，这是一条错误消息",
   });
 }
 </script>
 
 <template>
   <j-row>
+    <j-button @click="success">成功</j-button>
+    <j-button @click="warning">警告</j-button>
+    <j-button @click="info">消息</j-button>
+    <j-button @click="error">错误</j-button>
+  </j-row>
+  <j-row>
     <i class="j-icon-edit"></i>
     <i class="j-icon-share"></i>
     <i class="j-icon-delete"></i>
-    <j-button type="primary" icon="j-icon-search" @click="say">搜索</j-button>
+    <j-button type="primary" icon="j-icon-search">搜索</j-button>
   </j-row>
   <j-row>
     <j-button>默认按钮</j-button>

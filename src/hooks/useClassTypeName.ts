@@ -1,7 +1,6 @@
 import { computed } from 'vue';
 
 const createClass = (baseClass: string, classTypeName: string) => {
-  console.log(baseClass, classTypeName);
   if (!classTypeName) return [baseClass];
   return [baseClass, `${baseClass}--${classTypeName}`].join(" ");
 };

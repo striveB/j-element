@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 import { useClassTypeName } from "@/hooks/useClassTypeName";
 const props = defineProps({
   type: {
@@ -10,10 +10,24 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  duration: {
+    type: Number,
+    default: 3000,
+  },
 });
 const baseClassName = useClassTypeName("j-message", props);
+
+const visible = ref<boolean>(true);
+
+setTimeout(() => {
+  visible.value = false;
+}, props.duration);
 </script>
 <template>
-  <div :class="baseClassName">{{ props.message }}<slot></slot></div>
+  <transition name="el-message-fade" @after-leave="$emit('destroy')">
+    <div v-show="visible" :class="baseClassName">
+      {{ props.message }}<slot></slot>
+    </div>
+  </transition>
 </template>
 <style lang="sass" scoped></style>

@@ -64,3 +64,10 @@
   }
 
 }
+
+.el-message-fade-enter,
+.el-message-fade-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
+
