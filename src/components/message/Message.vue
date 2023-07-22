@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { defineProps, onMounted, ref } from "vue";
 import { useClassTypeName } from "@/hooks/useClassTypeName";
 const props = defineProps({
   type: {
@@ -17,7 +17,11 @@ const props = defineProps({
 });
 const baseClassName = useClassTypeName("j-message", props);
 
-const visible = ref<boolean>(true);
+const visible = ref<boolean>(false);
+onMounted(() => {
+  // 组件加载后再显示为了动画执行
+  visible.value = true;
+});
 
 setTimeout(() => {
   visible.value = false;

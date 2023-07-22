@@ -38,6 +38,7 @@ const createMessage = (props: MessageParams): Instance =>{
   }
   const vnode = createVNode(MessageConstructor, props)
   render(vnode,container)
+  
   if(vnode.el && instances.length > 0) {
     top += step;
     vnode.el.style.top = top + 'px';
