@@ -30,7 +30,8 @@ setTimeout(() => {
 <template>
   <transition name="el-message-fade" @after-leave="$emit('destroy')">
     <div v-show="visible" :class="baseClassName">
-      {{ props.message }}<slot></slot>
+      <i :class="'j-icon-' + type"></i> &nbsp;
+      <span class="j-message__content">{{ props.message }}</span>
     </div>
   </transition>
 </template>
