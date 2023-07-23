@@ -3,8 +3,11 @@ import MessageConstructor from './Message.vue'
 import { isString } from '../../utils/types'
 
 type Props = {
-  type: string,
+  type?: string,
   message: string,
+  duration?: number,
+  dangerouslyUseHTMLString?: boolean,// 内容是否解析为html
+  center?: boolean,
 }
 
 type MessageParams = Props & {
@@ -51,7 +54,7 @@ const createMessage = (props: MessageParams): Instance =>{
   }
 }
 
-// 元素呗清楚后重新设置top
+// 元素被清除后重新设置top值
 const close = (id: string) => {
   let index = -1;
   let removedHeight = 0;

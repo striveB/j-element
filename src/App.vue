@@ -4,11 +4,13 @@ function success() {
   Message({
     type: "success",
     message: "恭喜你，这是一条成功消息",
+    duration: 5000,
   });
 }
 function warning() {
   Message({
     type: "warning",
+    dangerouslyUseHTMLString: true,
     message: "警告哦，这是一条警告消息",
   });
 }
@@ -24,6 +26,18 @@ function error() {
     message: "错了哦，这是一条错误消息",
   });
 }
+function htmlNode() {
+  Message({
+    dangerouslyUseHTMLString: true,
+    message: "<strong>这是 <i>HTML</i> 片段</strong>",
+  });
+}
+function center() {
+  Message({
+    message: "居中内容",
+    center: true,
+  });
+}
 </script>
 
 <template>
@@ -32,6 +46,8 @@ function error() {
     <j-button @click="warning">警告</j-button>
     <j-button @click="info">消息</j-button>
     <j-button @click="error">错误</j-button>
+    <j-button @click="htmlNode">解析html</j-button>
+    <j-button @click="center">居中内容</j-button>
   </j-row>
   <j-row>
     <i class="j-icon-edit"></i>
