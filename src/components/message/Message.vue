@@ -29,12 +29,21 @@ const visible = ref<boolean>(false);
 onMounted(() => {
   // 组件加载后再显示为了动画执行
   visible.value = true;
+  startTimer();
 });
 
-setTimeout(() => {
-  visible.value = false;
-}, props.duration);
+// 关闭
+function close() {}
 
+// 倒计时关闭
+function startTimer() {
+  if (props.duration === 0) return;
+  setTimeout(() => {
+    visible.value = false;
+  }, props.duration);
+}
+
+// 获取icon类名
 const iconClass = computed(() => {
   let type = props.type || "info";
   return "j-icon-" + type;
@@ -48,13 +57,14 @@ const ClassNames = computed(() => {
 });
 </script>
 <template>
-  <transition name="el-message-fade" @after-leave="$emit('destroy')">
+  <transition name="el-message-fade" @before-leave="$emit('destroy')">
     <div v-show="visible" :class="ClassNames">
       <i :class="iconClass"></i> &nbsp;
       <span v-if="!dangerouslyUseHTMLString" class="j-message__content">{{
         message
       }}</span>
       <div v-else class="j-message__content" v-html="message"></div>
+      <!-- <i class="j-message__closeBtn j-icon-close" @click="$emit('destroy')"></i> -->
     </div>
   </transition>
 </template>

@@ -38,6 +38,13 @@ function center() {
     center: true,
   });
 }
+function notClose() {
+  Message({
+    message: "不会自动关闭的内容",
+    duration: 0,
+    center: true,
+  });
+}
 </script>
 
 <template>
@@ -48,6 +55,7 @@ function center() {
     <j-button @click="error">错误</j-button>
     <j-button @click="htmlNode">解析html</j-button>
     <j-button @click="center">居中内容</j-button>
+    <j-button @click="notClose">不会自动关闭</j-button>
   </j-row>
   <j-row>
     <i class="j-icon-edit"></i>

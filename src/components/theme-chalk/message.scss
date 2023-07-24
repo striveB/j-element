@@ -16,7 +16,6 @@
   display: flex;
   align-items: center;
   z-index: 999;
-
   @include when(center) {
     justify-content: center;
   }
@@ -79,6 +78,13 @@
 
   & .j-icon-warning {
     color: $--message-warning-font-color;
+  }
+
+  .j-message__closeBtn{
+    color: $--message-info-font-color;
+    cursor: pointer;
+    // margin-left: auto;
+    text-align: right;
   }
 }
 
