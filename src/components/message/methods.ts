@@ -8,11 +8,11 @@ type Props = {
   duration?: number,
   dangerouslyUseHTMLString?: boolean,// 内容是否解析为html
   center?: boolean,
+  showClose?: boolean
 }
 
 type MessageParams = Props & {
   id: string,
-  top: number,
   close: (id: string)=>void,
   onDestroy: ()=>void
 }
@@ -20,13 +20,12 @@ type MessageParams = Props & {
 type Instance = {
   id: string;
   vnode: any;
-  props: MessageParams
+  props: MessageParams,
+  offsetHeight: number
 }
 
 let instances : Instance[] = [];
 let seed = 1;
-let top = 20;
-let step = 70
 
 const createMessage = (props: MessageParams): Instance =>{
   const container: HTMLDivElement = document.createElement('div')
@@ -34,7 +33,6 @@ const createMessage = (props: MessageParams): Instance =>{
   props = {
     ...props,
     id,
-    top: 20,
     onDestroy: ()=>{
       close(id)
     }
@@ -42,16 +40,21 @@ const createMessage = (props: MessageParams): Instance =>{
   const vnode = createVNode(MessageConstructor, props)
   render(vnode,container)
   
-  if(vnode.el && instances.length > 0) {
-    top += step;
-    vnode.el.style.top = top + 'px';
-  }
+  let verticalOffset = 20
   document.body.appendChild(container.firstElementChild as HTMLElement)
-  return {
+  instances.forEach(item => {
+    verticalOffset += item.vnode.el.offsetHeight + 16;
+  });
+  if(vnode.el){
+    vnode.el.style.top = verticalOffset + 'px';
+  }
+  let instance = {
     id,
     vnode,
-    props
+    props,
+    offsetHeight: vnode?.el?.offsetHeight
   }
+  instances.push(instance)
 }
 
 // 元素被清除后重新设置top值
@@ -65,22 +68,18 @@ const close = (id: string) => {
       removedHeight = instance.vnode.el.offsetHeight;
       document.body.removeChild(instance.vnode.el);
       instances.splice(i, 1);
-      if(top > instance.props.top){
-        top -= step
-      }
       break;
     }
   }
   for (let i = index; i < instances.length; i++) {
     const instance = instances[i];
-    let pos = parseInt(instance.vnode.el.style.top, 10) - removedHeight - step;
+    let pos = parseInt(instance.vnode.el.style.top, 10) - removedHeight - 16 ;
     instance.vnode.el.style.top = pos + 'px';
   }
 }
 
 const Message = (content: string | Props)=>{
   let props = (isString(content) ? {message: content} : content) as MessageParams
-  let instance = createMessage(props)
-  instances.push(instance)
+  createMessage(props)
 }
 export default Message

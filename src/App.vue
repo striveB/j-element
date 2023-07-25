@@ -5,6 +5,7 @@ function success() {
     type: "success",
     message: "恭喜你，这是一条成功消息",
     duration: 5000,
+    showClose: true,
   });
 }
 function warning() {

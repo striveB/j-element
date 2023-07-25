@@ -22,6 +22,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  showClose: {
+    type: Boolean,
+    default: false,
+  },
 });
 const baseClassName = useClassTypeName("j-message", props);
 
@@ -57,14 +61,18 @@ const ClassNames = computed(() => {
 });
 </script>
 <template>
-  <transition name="el-message-fade" @before-leave="$emit('destroy')">
+  <transition name="el-message-fade" @after-leave="$emit('destroy')">
     <div v-show="visible" :class="ClassNames">
       <i :class="iconClass"></i> &nbsp;
       <span v-if="!dangerouslyUseHTMLString" class="j-message__content">{{
         message
       }}</span>
       <div v-else class="j-message__content" v-html="message"></div>
-      <!-- <i class="j-message__closeBtn j-icon-close" @click="$emit('destroy')"></i> -->
+      <i
+        v-if="duration === 0 || showClose"
+        class="j-message__closeBtn j-icon-close"
+        @click="$emit('destroy')"
+      ></i>
     </div>
   </transition>
 </template>

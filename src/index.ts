@@ -12,6 +12,7 @@ const install = (app: App) => {
   })
 }
 export default {
+  version: '0.3.1',
   install,
   JMessage: Message
 }

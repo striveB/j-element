@@ -37,6 +37,22 @@
       center: true,
     });
   }
+
+  function longTime(){
+    JUi.JMessage({
+      type: "success",
+      message: "此消息五秒后自动关闭",
+      duration: 5000,
+      showClose: true,
+    });
+  }
+
+  function notAutoClose(){
+    JUi.JMessage({
+      message: "这是一个不会自动关闭的消息！",
+      duration: 0,
+    });
+  }
 </script>
 
 # Message 消息提示
@@ -70,27 +86,27 @@
 </template>
 
 <script setup lang="ts">
-  import {JMessage} from 'j-element'
+  import JUi from 'j-element'
   function success() {
-    JMessage({
+    JUi.JMessage({
       type: "success",
       message: "恭喜你，这是一条成功消息",
     });
   }
   function warning() {
-    JMessage({
+    JUi.JMessage({
       type: "warning",
       message: "警告哦，这是一条警告消息",
     });
   }
   function info() {
-    JMessage({
+    JUi.JMessage({
       type: "info",
       message: "这是一条消息提示",
     });
   }
   function error() {
-    JMessage({
+    JUi.JMessage({
       type: "error",
       message: "错了哦，这是一条错误消息",
     });
@@ -98,6 +114,50 @@
 </script>
 ```
 :::
+
+## 可关闭
+
+可以添加关闭按钮。
+
+<hr />
+
+<j-button @click="longTime">成功</j-button>
+<j-button @click="notAutoClose">不会自动关闭</j-button>
+
+<hr />
+
+默认的 Message 是不可以被人工关闭的，如果需要可手动关闭的 Message，可以使用 `showClose` 字段。此外，Message 拥有可控的 `duration`，设置 `0` 为不会被自动关闭，并且会出现关闭按钮，组件默认为 3000 毫秒。
+
+
+::: details Show Code
+```vue
+
+<template>
+  <j-button @click="longTime">成功</j-button>
+  <j-button @click="notAutoClose">不会自动关闭</j-button>
+</template>
+
+<script setup lang="ts">
+  import JUi from 'j-element'
+  function longTime(){
+    JUi.JMessage({
+      type: "success",
+      message: "此消息五秒后自动关闭",
+      duration: 5000,
+      showClose: true,
+    });
+  }
+
+  function notAutoClose(){
+    JUi.JMessage({
+      message: "这是一个不会自动关闭的消息！",
+      duration: 0,
+    });
+  }
+</script>
+```
+:::
+
 
 ## 文字居中
 
@@ -116,9 +176,9 @@
 </template>
 
 <script setup lang="ts">
-  import {JMessage} from 'j-element'
+  import JUi from 'j-element'
   function openCenter() {
-    JMessage({
+    JUi.JMessage({
       center: true,
       message: "居中内容",
     });
@@ -147,9 +207,9 @@
 </template>
 
 <script setup lang="ts">
-  import {JMessage} from 'j-element'
+  import JUi from 'j-element'
   function openHTML() {
-    JMessage({
+    JUi.JMessage({
       dangerouslyUseHTMLString: true,
       message: "<strong>这是 <i>HTML</i> 片段</strong>",
     });
