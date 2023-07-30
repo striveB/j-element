@@ -50,6 +50,10 @@ function notClose() {
 
 <template>
   <j-row>
+    <j-link :underline="false">无下划线</j-link>
+    <j-link>有下划线</j-link>
+  </j-row>
+  <j-row>
     <j-link :disabled="true">默认按钮</j-link>
     <j-link type="primary">主要按钮</j-link>
     <j-link type="success">成功按钮</j-link>

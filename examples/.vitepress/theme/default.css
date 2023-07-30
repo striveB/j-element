@@ -18,3 +18,7 @@ button {
 .j-button-group + .j-button-group {
   margin-left: 10px;
 }
+
+.j-link {
+  margin-right: 5px;
+}
