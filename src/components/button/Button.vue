@@ -6,14 +6,14 @@ import {
   computed,
   useSlots,
 } from "vue";
-import { useClassTypeName } from "@/hooks/useClassTypeName";
+import { useClassName } from "@/hooks/useClassName";
 
 defineOptions({
   name: "JButton",
 });
 
 let props = defineProps<{
-  type?: string;
+  type?: "primary" | "success" | "warning" | "danger" | "info" | "text";
   icon?: string;
   round?: boolean;
   circle?: boolean;
@@ -23,7 +23,7 @@ let props = defineProps<{
   size?: "large" | "small" | "mini";
   nativeType?: "button" | "submit" | "reset";
 }>();
-const baseClassName = useClassTypeName("j-button", props);
+const baseClassName = useClassName("j-button", props);
 
 const $slot = useSlots();
 
@@ -40,7 +40,7 @@ const ClassNames = computed(() => {
   let names = [];
   props.round && names.push("is-round");
   props.circle && names.push("is-circle");
-  (props.disabled || props.loading) && names.push("is-disabled");
+  props.loading && names.push("is-disabled");
   props.loading && names.push("is-loading");
   props.plain && names.push("is-plain");
   props.size && names.push("j-button--" + props.size);

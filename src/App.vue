@@ -50,6 +50,14 @@ function notClose() {
 
 <template>
   <j-row>
+    <j-link :disabled="true">默认按钮</j-link>
+    <j-link type="primary">主要按钮</j-link>
+    <j-link type="success">成功按钮</j-link>
+    <j-link type="info">信息按钮</j-link>
+    <j-link type="warning">警告按钮</j-link>
+    <j-link type="danger">危险按钮</j-link>
+  </j-row>
+  <j-row>
     <j-button @click="success">成功</j-button>
     <j-button @click="warning">警告</j-button>
     <j-button @click="info">消息</j-button>

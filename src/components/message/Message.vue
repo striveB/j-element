@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps, onMounted, ref, computed } from "vue";
-import { useClassTypeName } from "@/hooks/useClassTypeName";
+import { useClassName } from "@/hooks/useClassName";
 const props = defineProps({
   type: {
     type: String,
@@ -27,7 +27,7 @@ const props = defineProps({
     default: false,
   },
 });
-const baseClassName = useClassTypeName("j-message", props);
+const baseClassName = useClassName("j-message", props);
 
 const visible = ref<boolean>(false);
 onMounted(() => {
